@@ -5,6 +5,7 @@
 .DS_Store
 
 # l3build
+*.pdf
 /build
 
 # LaTeX aux files
@@ -22,3 +23,5 @@
 *.synctex(busy)
 *.toc
 *.xml
+*.nav
+*.snm
