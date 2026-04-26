@@ -2,6 +2,9 @@
 
 \colorlet{shadecolor}{teal!10}
 \usepackage[os = mac]{menukeys}
+\usepackage{zref-clever}
+\DeclareSIUnit{\amu}{amu}
+\declarekeytheorem{problem}[counter-format = \arabic*., parent = section]
 
 \coverset{
   title   = Molecule Spectroscopy,
@@ -35,7 +38,10 @@
 \fancyhead[EL]{\sffamily \rightmark}
 \fancyhead[OR]{\fontfamily{lmr}\selectfont<<\texttt{\href{mailto:xiamingyu@westlake.edu.cn}{xiamingyu@westlake.edu.cn}}>>}
 \addcontentsline{toc}{chapter}{Problem Set}
+\refstepcounter{chapter}
 \newweek
 \include{./context/hw1.tex}
+\newweek
+\include{./context/hw2.tex}
 
 \end{document}

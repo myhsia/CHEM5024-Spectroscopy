@@ -1,0 +1,169 @@
+% !TeX root = ../main.tex
+
+\section{Assignment \#2}
+
+\begin{problem}[note = Isotope shifts in the rotational spectrum of OCS (2pts),
+                label = hw2:problem1]
+  \leavevmode \vspace*{-.5\baselineskip}
+  \begin{snugshade}
+    \begin{enumext}[label = \ensuremath \ast]
+      \item
+      Consider linear carbonyl sulfide, \ce{^{16}O ^{12}C ^{32}S} with the
+      molecular structure \ce{O = C = S}.
+      Assume the molecule behaves as a rigid linear rotor.
+      \item
+      Use the following approximate bond lengths:
+      $r_{\ce{C-O}} = \qty{1.16}\angstrom$.
+      Set the oxygen atom at $x = 0$, so that $x_{\ce O} = 0$,
+      $x_{\ce C} = \qty{1.16}\angstrom$, $x_{\ce S} = \qty{2.72}\angstrom$.
+      Use approximate isotrope masses for convenience:
+      \ce{^{16}O}: $16$, \ce{^{18}O}: $18$, \ce{^{12}C}: $12$,
+      \ce{^{13}C}: $13$, \ce{^{32}S}: $32$, \ce{^{34}S}: $34$.
+      \item
+      For a linear rigid rotor, $\tilde\nu_{J \to J+1} = 2B(J + 1)$, and for the
+      $J = 3 \to 4$ transition, $\tilde \nu_{3 \to 4} = 8B$,
+      where $B = \frac{h}{8\pi^2cI}$
+      (for \ce{^{16}O ^{12}C ^{32}S}, $B = \qty{0.20307}{\per\cm}$).
+    \end{enumext}
+  \end{snugshade}
+  \paragraph{Questions.}
+  \begin{enumext}
+    \item If one atom is replaced by an isotope, calculate the shift of the
+    $J = 3 \to 4$ line for each isotopologue:
+    \[
+      \ce{^{18}O ^{12}C ^{32}S}, \quad
+      \ce{^{16}O ^{13}C ^{32}S}, \quad
+      \ce{^{16}O ^{12}C ^{34}S}.
+    \]
+    Report the shifts in $\unit{\per\cm}$ relative to the original species.
+    \item If the spectrometor cannot resolve frequency shifts smaller than
+    $\qty{0.05}{\per\cm}$, which isotope-labeled species cannot be resolved
+    from this main peak?
+  \end{enumext}
+\end{problem}
+\begin{solution}\leavevmode
+  \begin{enumext}
+    \item Due to $\tilde \nu_{J \to J+1} \propto B$
+    and $B = \frac{h}{8\pi^2cI}$, we can obtain
+    \[
+      \frac{\tilde \nu'}{\tilde \nu} = \frac{B'}{B} = \frac{I}{I'}, \quad
+      \Delta \tilde \nu = \tilde \nu' - \tilde \nu
+    = \tilde \nu \ab(\frac{I}{I'} - 1).
+    \]
+    In the shift of $J = 3 \to 4$,
+    $\Delta \tilde \nu = 8B \ab(\frac{I}{I'} - 1)$.
+    The center of mass and the moment of inertia in the original and
+    reference cases are
+    \[\begin{array}{l@{~}c@{~}l@{\quad}l@{~}c@{~}l@{~}c@{~}l}
+      x_c^0     & = & \qty{1.68}\angstrom, &
+      I_0       & = & 16 \times (x_c^0)^2 + 12 \times (x_c^0 - 1.16)^2
+                    + 32 \times (x_c^0 - 2.72)^2
+                & = & \qty{83.0140}{\amu \angstrom\squared},\\
+      x_c^i     & = & \qty{1.63}\angstrom, &
+      I_1       & = & 18 \times (x_c^0)^2 + 12 \times (x_c^i - 1.16)^2
+                    + 32 \times (x_c^i - 2.72)^2
+                & = & \qty{88.4940}{\amu \angstrom\squared},\\
+      x_c^{ii}  & = & \qty{1.67}\angstrom, &
+      I_2       & = & 16 \times (x_c^0)^2 + 13 \times (x_c^{ii} - 1.16)^2
+                    + 32 \times (x_c^{ii} - 2.72)^2
+                & = & \qty{83.2827}{\amu \angstrom\squared},\\
+      x_c^{iii} & = & \qty{1.72}\angstrom, & 
+      I_3       & = & 16 \times (x_c^0)^2 + 12 \times (x_c^{iii} - 1.16)^2
+                                + 34 \times (x_c^{iii} - 2.72)^2
+                & = & \qty{85.0967}{\amu \angstrom\squared}.
+    \end{array}\]
+    Substituting the data, then the shifts are
+    \[
+      \Delta \tilde \nu_i     = \qty{-0.1006}{\per\cm}, \quad
+      \Delta \tilde \nu_{ii}  = \qty{-0.0052}{\per\cm}, \quad
+      \Delta \tilde \nu_{iii} = \qty{-0.0398}{\per\cm}.
+    \]
+    \item From the results,
+    \ce{^{18}O ^{12}C ^{32}S} can be resolved, while \ce{^{16}O ^{13}C ^{32}S}
+    and \ce{^{16}O ^{12}C ^{34}S} cannot.
+  \end{enumext}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}[Strongest rotational line and temperature dependence (2pts)]
+  \leavevmode \vspace*{-.5\baselineskip}
+  \begin{snugshade}
+    \begin{enumext}[label = \ensuremath \ast]
+      \item
+      For a linear rigid rotor, the approximate intensity of the absorption
+      transition $J \to J + 1$ is
+      $I_j \propto (J + 1) \exp\ab[-\frac{BhcJ(J + 1)}{k_BT}]$, where $J$ is the
+      lower-state rotational quantum number.
+      \item
+      The strongest transition is approximately determined by
+      \[
+        J_{\max} \approx \frac{1 + \sqrt{1 + 8k_BT/(Bhc)}}{4} - 1.
+      \]
+      Use $\frac{k_BT}{hc} = \qty{208.5}{\per\cm}$ at $\qty{300}\K$ and
+      $B_{\ce{CO}} = \qty{1.8225}{\per\cm}$.
+      \item
+      For \ce{OCS}, use the rotational contant obtained
+      in~\zcref{hw2:problem1}: $B_{\ce{OCS}} \approx \qty{0.2031}{\per\cm}$.
+    \end{enumext}
+  \end{snugshade}
+  \paragraph{Questions.}
+  \begin{enumext}
+    \item Calculate the approximate $J_{\max}$ for \ce{CO} at $\qty{300}\K$.
+    Which transition is strongest?
+    \item Calculate the approximate $J_{\max}$ for \ce{CO} at $\qty{230}\K$.
+    Which transition is strongest?
+    \item For \ce{OCS} at $\qty{300}\K$, which term in the $J_{\max}$ equation
+    changes compared with \ce{CO}? Calculate the approximate $J_{\max}$
+    for \ce{OCS}. Which transition is strongest?
+  \end{enumext}
+\end{problem}
+\begin{solution}\leavevmode
+  \begin{enumext}
+    \item (b)\enspace Substituting the variable into the transition expression
+    \[
+      J_{\max}(\qty{300}\K)^{\ce{CO}}
+    = \frac{1 + \sqrt{1 + 8 \times
+            \qty{208.5}{\per\cm}/\qty{1.8225}{\per\cm}}}{4} - 1 = 6.82, \quad
+      J_{\max}(\qty{230}\K)^{\ce{CO}} = 5.88.
+    \]
+    Rounding to the nearest integer, for $\qty{300}\K$, $J_{\max} = 7$,
+    The strongest transition is the $J = 7 \to 8$ line;
+    For $\qty{230}\K$, $J_{\max} = 6$.
+    The strongest transition is the $J = 6 \to 7$ line.
+    \stepcounter{enumXi}
+    \item The rotational constant $B$ is the term that changes significantly
+    compared to \ce{CO}, since \ce{OCS} is heavier than \ce{CO} and they have
+    different moment of inertia. The transition is
+    \[
+      J_{\max}(\qty{300}\K)^{\ce{OCS}}
+    = \frac{1 + \sqrt{1 + 8 \times
+            \qty{208.5}{\per\cm}/\qty{0.2031}{\per\cm}}}{4} - 1 = 21.91.
+    \]
+    Rounding to the nearest integer, $J_{\max} = 22$.
+    The strongest transition is the $J = 22 \to 23$ line.
+  \end{enumext}
+\end{solution}
+
+\begin{problem}[Centrifugal distortion for molecular rotation (1pt)]
+  \leavevmode \vspace*{-.5\baselineskip}
+  \begin{snugshade}
+    If the centrifugal distortion is considered, then there is an additional
+    contribution of $[-DJ^2 (J + 1)^2]$ to the energetic states.
+    Whats is the expression for neighboring rotational line spacing
+    $(J \to J + 1)$ under this new condition
+    (Ideeal rigid-rotor engines $E_\text{rotation} = hcBJ(J + 1)$)?
+  \end{snugshade}
+\end{problem}
+\begin{solution}
+  The energy levels will be written as
+  \[
+    E(J) = BJ(J + 1) - DJ^2(J + 1)^2.
+  \]
+  Then, the transition becomes
+  \begin{multline*}
+    \nu_{J\to J+1} = E(J + 1) - E(J)
+    = [B(J + 1)(J + 2) - D(J + 1)^2(J + 2)^2] \\ - [BJ(J + 1) - DJ^2(J + 1)^2]
+    = 2B(J + 1) - 4D(J + 1)^3.
+  \end{multline*}
+\end{solution}
