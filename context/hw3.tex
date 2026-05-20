@@ -1,0 +1,159 @@
+% !TeX root = ../main.tex
+
+\section{Assignment \#3}
+
+\begin{problem}[note =  
+  IR Activity of Vibrational Modes in a Fictitious Molecule]\leavevmode
+  Consider a fictitious planar molecule \ce A-\ce M-\ce{B_2}-\ce C.
+  \begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+      \node [minimum width = 1.5em] (M)                           {\ce M};
+      \node [minimum width = 1.5em] (C)     at ([xshift = -2cm]M) {\ce C};
+      \node [minimum width = 1.5em] (A)     at ([xshift = +3cm]M) {\ce A};
+      \node [minimum width = 1.5em] (Bup)   at ([yshift = +1cm]M) {\ce B};
+      \node [minimum width = 1.5em] (Bdown) at ([yshift = -1cm]M) {\ce B};
+      \draw (M.west)  -- (C.east)     (M.east)  -- (A.west)
+            (M.north) -- (Bup.south)  (M.south) -- (Bdown.north);
+    \end{tikzpicture}
+    \caption{The center atom is \ce M. The four terminal atoms are located
+      along $+x$, $-x$, $+y$, and~$-y$.}
+  \end{figure}
+  \[\begin{array}{l@{~}c@{~}l@{\quad}l@{~}c@{~}l}
+    \bm\mu(\ce M - \ce A)         & = & +\mu_A\hat x, &
+    \bm\mu(\ce M - \ce C)         & = & -\mu_C\hat x,\\
+    \bm\mu(\ce M - \ce{B_{up}})   & = & +\mu_B\hat y, &
+    \bm\mu(\ce M - \ce{B_{down}}) & = & -\mu_B\hat y,
+  \end{array}\]
+  The equilibrium total dipole moment is $\bm \mu_0 = (\mu_A - \mu_C) \hat x$,
+  $\mu_A > \mu_C$.
+  \subparagraph{Possible Vibrational Modes}
+  \begin{enumext}
+    \item \textbf{Breathing mode:} All four bonds stretch and contract together.
+    \item \textbf{Antisymmetric stretch along $x$:}
+    \ce M-\ce A stretches while \ce M-\ce C contracts; The two \ce M-\ce B
+    bonds do not move.
+    \item \textbf{Antisymmetric stretch along $y$:}
+    \ce M-\ce{B_{up}} stretches while
+    \ce M-\ce{B_{down}} contracts; The two horizontal bonds do not move.
+    \item \textbf{Symmetric stretch of the two \ce M-\ce B bonds:}
+    Both \ce M-\ce B bonds stretch and contract together; The horizontal bonds
+    do not move.
+    \item \textbf{In-phase bending of \ce M-\ce A and \ce M-\ce C:}
+    Both horizontal bonds
+    bend upward together, giving both bond dipoles a positive $y$ component.
+    \item \textbf{Out-of-phase bending of \ce M-\ce A and \ce M-\ce C:}
+    \ce M-\ce A bends upward while \ce M-\ce C bends downward.
+  \end{enumext}
+  \subparagraph{Tasks}
+  Choose any three modes from the six modes listed above.
+  For each selected mode, answer the following:
+  \begin{enumext}[label = \arabic*.]
+    \item If the mode is IR active, is the transition dipole mainly along $x$
+    or $y$?
+    \item Is the mode IR active or IR inactive?
+  \end{enumext}
+  \subparagraph{Criterion for IR activity}
+  A vibrational mode is IR active only if the total molecular dipole moment
+  changes during the vibration.
+\end{problem}
+\begin{solution}
+  \begin{enumext}
+    \item \textbf{Breathing Mode:}
+  \end{enumext}
+\end{solution}
+
+\clearpage
+
+\begin{problem}[note = Fermi Resonance in \ce{SO2}]
+  \ce{SO2} is a bent triatomic molecule belonging to the $C_{2v}$ point group.
+  \begin{table}[htbp]
+    \caption{Fundamental Vibrational Modes}
+    \centering
+    \begin{tabular}{*4l}
+      \toprule
+      Mode & Description & Frequency (\unit{\per\cm}) &
+      Irreducible Representation\\
+      \midrule
+      $\nu_1$ & Symmetric \ce S-\ce O Stretch     & 1151 & $A_1$\\
+      $\nu_2$ & Bending Mode                      & 518  & $A_1$\\
+      $\nu_3$ & Antisymmetric \ce S-\ce O Stretch & 1362 & $B_1$\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  Assume overtone and combination-band frequencies can be approximated by simple sums of the fundamental frequencies.
+
+  Two vibrational states can be considered possible Fermi-resonance partners if
+  \begin{enumext}[label = \arabic*]
+    \item their frequencies are close, and
+    \item they have the same irreducible representation.
+  \end{enumext}
+  In this problem, treat two states as frequency-close if
+  $|\Delta \tilde\nu| < \qty{150}{\per\cm}$.
+
+  \subparagraph{Useful Direct Products in $C_{2v}$}
+  \[
+    A_1 \times A_1 = A_1,\quad
+    A_1 \times B_1 = B_1,\quad
+    B_1 \times B_1 = A_1.
+  \]
+  \subparagraph{States to Consider}
+  $2\nu_1$, $2\nu_2$, $2\nu_3$, $\nu_1 + \nu_2$,
+  $\nu_1 + \nu_3$, $\nu_2 + \nu_3$.
+  \subparagraph{Tasks}
+  \begin{enumext}
+    \item Calculate the approximate frequencies of $2\nu_1$ ($A_1$),
+    $2\nu_2$ ($A_1$), $2\nu_3$ ($A_1$), $\nu_1 + \nu_2$ ($A_1$),
+    $\nu_1 + \nu_3$ ($B_1$), and $\nu_2 + \nu_3$ ($B_1$).
+    \item Arrange the following zero-order vibrational states in order of
+    increasing frequency: $\nu_1$, $\nu_2$, $\nu_3$, $2\nu_1$, $2\nu_2$,
+    $2\nu_3$, $\nu_1 + \nu_2$, $\nu_1 + \nu_3$, $\nu_2 + \nu_3$.
+    Label the irreducible representation of each state.
+    \item Determine all possible Fermi-resonance combinations among these
+    states. For each candidate pair, explain whether it is allowed or not
+    allowed based on frequency proximity and symmetry.
+  \end{enumext}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[note =
+  Parallel vs Perpendicular Vibrations in Rovibrational Spectroscopy]
+  \ce{Ch3Cl} is a non-linear molecule belonging to the $C_{3v}$ point group.
+  Take the $z$-axis along the \ce C-\ce{Cl} bond, which is the principal
+  symmetry axis.
+  \[
+    \mu_z \sim A_1, \quad (\mu_x, \mu_y) \sim E.
+  \]
+  If the transition dipole moment of a vibrational mode is along the $z$-axis,
+  the band is called a \emph{parallel band}. If the transition dipole moment
+  lies in the $xy$-plane, the band is called a \emph{perpendicular band}.
+  \begin{table}[hbtp]
+    \caption{Vibratioinal Modes of \ce{CH3Cl}}
+    \centering
+    \begin{tabular}{*4l}
+      \toprule
+      Mode & Description & Frequency (\unit{\per\cm}) &
+      Irreducible Representation\\
+      \midrule
+      $\nu_1$ & \ce{CH3} symmetric stretch     & 2937 & $A_1$\\
+      $\nu_2$ & \ce{CH3} symmetric deformation & 1355 & $A_1$\\
+      $\nu_3$ & \ce C-\ce{Cl} stretch          & 732  & $A_1$\\
+      $\nu_4$ & \ce{CH3} degenerate stretch    & 3039 & $E$  \\
+      $\nu_5$ & \ce{CH3} degenerate deformation& 1452 & $E$  \\
+      $\nu_6$ & \ce{CH3} rocking               & 1017 & $E$  \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \subparagraph{Tasks}
+  \begin{enumerate}
+    \item For each mode, explain whether its transition diploe moment is mainly
+    along the $z-axis$ in the $xy$-plane.
+    \item For each from $\nu_1$ to $\mu_6$, determine whether it is a parallel
+    vibration of a perpendicular vibration.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
