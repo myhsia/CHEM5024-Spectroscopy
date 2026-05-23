@@ -4,7 +4,7 @@
 
 \begin{problem}[note =  
   IR Activity of Vibrational Modes in a Fictitious Molecule]\leavevmode
-  Consider a fictitious planar molecule \ce A-\ce M-\ce{B_2}-\ce C.
+  Consider a fictitious planar molecule \ce{A-M}-\ce{B_2}-\ce C.
   \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}
@@ -31,19 +31,19 @@
   \begin{enumext}
     \item \textbf{Breathing mode:} All four bonds stretch and contract together.
     \item \textbf{Antisymmetric stretch along $x$:}
-    \ce M-\ce A stretches while \ce M-\ce C contracts; The two \ce M-\ce B
+    \ce{M-A} stretches while \ce{M-C} contracts; The two \ce{M-B}
     bonds do not move.
     \item \textbf{Antisymmetric stretch along $y$:}
     \ce M-\ce{B_{up}} stretches while
     \ce M-\ce{B_{down}} contracts; The two horizontal bonds do not move.
-    \item \textbf{Symmetric stretch of the two \ce M-\ce B bonds:}
-    Both \ce M-\ce B bonds stretch and contract together; The horizontal bonds
+    \item \textbf{Symmetric stretch of the two \ce{M-B} bonds:}
+    Both \ce{M-B} bonds stretch and contract together; The horizontal bonds
     do not move.
-    \item \textbf{In-phase bending of \ce M-\ce A and \ce M-\ce C:}
+    \item \textbf{In-phase bending of \ce{M-A} and \ce{M-C}:}
     Both horizontal bonds
     bend upward together, giving both bond dipoles a positive $y$ component.
-    \item \textbf{Out-of-phase bending of \ce M-\ce A and \ce M-\ce C:}
-    \ce M-\ce A bends upward while \ce M-\ce C bends downward.
+    \item \textbf{Out-of-phase bending of \ce{M-A} and \ce{M-C}:}
+    \ce{M-A} bends upward while \ce{M-C} bends downward.
   \end{enumext}
   \subparagraph{Tasks}
   Choose any three modes from the six modes listed above.
@@ -57,13 +57,58 @@
   A vibrational mode is IR active only if the total molecular dipole moment
   changes during the vibration.
 \end{problem}
-\begin{solution}
+\pagebreak
+\begin{solution}\leavevmode
   \begin{enumext}
     \item \textbf{Breathing Mode:}
+    All four bonds stretch and contract simultaneously.
+    \begin{itemize}
+      \item Along $y$: The two \ce{M-B} bonds stretch by the same amount in
+      opposite directions. Their dipole changes are $\pm\Delta\mu_B \hat y$, 
+      so the $y$‑components cancel exactly at all times.
+      \item Along $x$: The \ce{M-A} and \ce{M-C} bonds both change lengths.
+      Since $\mu_A > \mu_C$, their dipole derivatives with respect to bond
+      length generally differ. Hence,
+      $\Delta\bm \mu = (\Delta\mu_A - \Delta\mu_C) \hat {\bm x} \neq \bm 0$.
+    \end{itemize}
+    TL;DR: IR active; transition dipole mainly along $x$.
+
+    \item \textbf{Antisymmetric stretch along $x$:}
+    \ce{M-A} stretches while \ce{M-C} contracts; the two \ce{M-B} bonds remain
+    unchanged.
+    \begin{itemize}
+      \item Along $y$: No motion, yielding no dipole change.
+      \item Along $x$: The stretching of \ce{M-A} increases its positive
+      dipole by $\Delta\mu_A$, while the contraction of \ce{M-C} reduces its
+      opposing negative dipole by $\Delta\mu_C$. Hence,
+      $\Delta\bm \mu = (\Delta\mu_A + \Delta\mu_C) \hat {\bm x} \neq \bm 0$.
+    \end{itemize}
+    TL;DR: IR active; transition dipole mainly along $x$.
+
+    \item \textbf{Out-of-phase bending of \ce{M-A} and \ce{M-C}:}
+    \ce{M-A} bends upward by a small angle $\theta$, and \ce{M-C} bends downward
+    by the same angle $\theta$.
+    \begin{itemize}
+      \item Along $x$: The total instantaneous dipole component is 
+      $\mu_x = (\mu_A - \mu_C)\cos\theta$. The change relative to
+      equilibrium is
+      \[
+        \Delta\mu_x = (\mu_A - \mu_C)(\cos\theta - 1)
+        \approx -\frac12 (\mu_A - \mu_C) \theta^2,
+      \]
+      which is second order in $\theta$ and yields no first‑order contribution.
+      \item Along $y$: The upward rotation of \ce{M-A} and downward rotation of
+      \ce{M-C}  (pointing in the $-\hat{x}$ direction) yield tracking
+      components along $+\hat{y}$ and $-\hat{y}$ respectively
+      \[
+        \Delta \mu_y = \mu_A \sin\theta - \mu_C \sin\theta
+        \approx (\mu_A - \mu_C) \theta.
+      \]
+      Since $\mu_A \neq \mu_C$, this results in a nonzero first‑order change.
+    \end{itemize}
+    TL;DR: IR active; transition dipole mainly along $y$.
   \end{enumext}
 \end{solution}
-
-\clearpage
 
 \begin{problem}[note = Fermi Resonance in \ce{SO2}]
   \ce{SO2} is a bent triatomic molecule belonging to the $C_{2v}$ point group.
@@ -75,13 +120,15 @@
       Mode & Description & Frequency (\unit{\per\cm}) &
       Irreducible Representation\\
       \midrule
-      $\nu_1$ & Symmetric \ce S-\ce O Stretch     & 1151 & $A_1$\\
+      $\nu_1$ & Symmetric \ce{S-O} Stretch     & 1151 & $A_1$\\
       $\nu_2$ & Bending Mode                      & 518  & $A_1$\\
-      $\nu_3$ & Antisymmetric \ce S-\ce O Stretch & 1362 & $B_1$\\
+      $\nu_3$ & Antisymmetric \ce{S-O} Stretch & 1362 & $B_1$\\
       \bottomrule
     \end{tabular}
   \end{table}
-  Assume overtone and combination-band frequencies can be approximated by simple sums of the fundamental frequencies.
+
+  Assume overtone and combination-band frequencies can be approximated by
+  simple sums of the fundamental frequencies.
 
   Two vibrational states can be considered possible Fermi-resonance partners if
   \begin{enumext}[label = \arabic*]
@@ -114,9 +161,47 @@
     allowed based on frequency proximity and symmetry.
   \end{enumext}
 \end{problem}
-\begin{solution}
-  
+\begin{solution}\leavevmode
+  \begin{enumext}
+    \item \begin{enumext}[columns = 3]
+      \item $2\nu_1        = \qty{2302}{\per\cm}$.
+      \item $2\nu_2        = \qty{1036}{\per\cm}$.
+      \item $2\nu_3        = \qty{2724}{\per\cm}$.
+      \item $\nu_1 + \nu_2 = \qty{1669}{\per\cm}$.
+      \item $\nu_1 + \nu_3 = \qty{2513}{\per\cm}$.
+      \item $\nu_2 + \nu_3 = \qty{1880}{\per\cm}$.
+    \end{enumext}
+    \item \parbox[t]{\dimexpr\linewidth-1em}{\centering
+    \begin{tabular}{*8l}
+      \toprule
+      Rank & State          & Frequency           & Irrep. &
+      Rank & State          & Frequency           & Irrep. \\
+      \midrule
+      1    & $\nu_2$        & \qty{518}{\per\cm}  & $A_1$  &
+      6    & $\nu_2 + \nu_3$& \qty{1880}{\per\cm} & $B_1$  \\
+      2    & $2\nu_2$       & \qty{1036}{\per\cm} & $A_1$  &
+      7    & $2\nu_1$       & \qty{2302}{\per\cm} & $A_1$  \\
+      3    & $\nu_1$        & \qty{1151}{\per\cm} & $A_1$  &
+      8    & $\nu_1 + \nu_3$& \qty{2513}{\per\cm} & $B_1$  \\
+      4    & $\nu_3$        & \qty{1362}{\per\cm} & $B_1$  &
+      9    & $2\nu_3$       & \qty{2724}{\per\cm} & $A_1$  \\
+      5    & $\nu_1 + \nu_2$& \qty{1669}{\per\cm} & $A_1$  \\
+      \bottomrule
+    \end{tabular}}
+    \item
+    \begin{enumext}
+      \item In $A_1$ states, only the pair $\nu_1$ and $2\nu_2$ is allowed,
+      since they differ by a frequency
+      $\Delta\nu_1 = \qty{115}{\per\cm} < \qty{150}{\per\cm}$, while other
+      pairs do not satisfy.
+      \item In $B_1$ states, the minimum frequency separation
+      is $\Delta\nu_2 = \qty{518}{\per\cm}$, so there are no allowed pairs in
+      this symmetry block.
+    \end{enumext}
+  \end{enumext}
 \end{solution}
+
+\clearpage
 
 \begin{problem}[note =
   Parallel vs Perpendicular Vibrations in Rovibrational Spectroscopy]
@@ -129,31 +214,58 @@
   If the transition dipole moment of a vibrational mode is along the $z$-axis,
   the band is called a \emph{parallel band}. If the transition dipole moment
   lies in the $xy$-plane, the band is called a \emph{perpendicular band}.
-  \begin{table}[hbtp]
-    \caption{Vibratioinal Modes of \ce{CH3Cl}}
-    \centering
-    \begin{tabular}{*4l}
-      \toprule
-      Mode & Description & Frequency (\unit{\per\cm}) &
-      Irreducible Representation\\
-      \midrule
-      $\nu_1$ & \ce{CH3} symmetric stretch     & 2937 & $A_1$\\
-      $\nu_2$ & \ce{CH3} symmetric deformation & 1355 & $A_1$\\
-      $\nu_3$ & \ce C-\ce{Cl} stretch          & 732  & $A_1$\\
-      $\nu_4$ & \ce{CH3} degenerate stretch    & 3039 & $E$  \\
-      $\nu_5$ & \ce{CH3} degenerate deformation& 1452 & $E$  \\
-      $\nu_6$ & \ce{CH3} rocking               & 1017 & $E$  \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
+  \begin{paracol}{2}
+    \begin{table}[hbtp]
+      \caption{Vibratioinal Modes of \ce{CH3Cl}}
+      \centering
+      \begin{tabular}{*4l}
+        \toprule
+        Mode    & Description                    & Frequency           &
+        Irrep.\\
+        \midrule
+        $\nu_1$ & \ce{CH3} symmetric stretch     & \qty{2937}{\per\cm} &
+        $A_1$ \\
+        $\nu_2$ & \ce{CH3} symmetric deformation & \qty{1355}{\per\cm} &
+        $A_1$ \\
+        $\nu_3$ & \ce C-\ce{Cl} stretch          & \qty{732}{\per\cm}  &
+        $A_1$ \\
+        $\nu_4$ & \ce{CH3} degenerate stretch    & \qty{3039}{\per\cm} &
+        $E$   \\
+        $\nu_5$ & \ce{CH3} degenerate deformation& \qty{1452}{\per\cm} &
+        $E$   \\
+        $\nu_6$ & \ce{CH3} rocking               & \qty{1017}{\per\cm} &
+        $E$   \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+    \switchcolumn \vfill \centering
+    \chemfig{C(-[2]Cl)(<[-2]H)(-[-1]H)(-[-3]H)}
+    \vfill
+  \end{paracol}
   \subparagraph{Tasks}
   \begin{enumerate}
     \item For each mode, explain whether its transition diploe moment is mainly
-    along the $z-axis$ in the $xy$-plane.
-    \item For each from $\nu_1$ to $\mu_6$, determine whether it is a parallel
-    vibration of a perpendicular vibration.
+    along the $z$-axis or in the $xy$-plane.
+    \item For each from $\nu_1$ to $\nu_6$, determine whether it is a parallel
+    vibration or a perpendicular vibration.
   \end{enumerate}
 \end{problem}
-\begin{solution}
-  
+\begin{solution}\leavevmode
+  \begin{enumext}
+    \item \begin{enumext}
+      \item For $A_1$ modes: These modes are totally symmetric.
+      They transform like the $\mu_z$ component of the dipole moment.
+      Therefore, the transition dipole moment is directed along the $z$-axis,
+      i.e., the $\ce{C-Cl}$ bond.
+      \item For $E$ modes: These are doubly degenerate modes.
+      They transform like the $(\mu_x, \mu_y)$ pair.
+      This means the transition dipole moment lies within the $xy$-plane, i.e.,
+      perpendicular to the $\ce{C-Cl}$ bond.
+    \end{enumext}
+    \item The $A_1$ modes preserve the $C_3$ symmetry; their change in dipole
+    moment can only occur along that axis. The $E$ modes involve asymmetric
+    motions that shift the electron density ``sideways'' within the $xy$-plane.
+    So, $\nu_1$, $\nu_2$, and~$\nu_3$ are parallel vibrations while
+    $\nu_4$, $\nu_5$, and~$\nu_6$ are perpendicular vibrations.
+  \end{enumext}
 \end{solution}
