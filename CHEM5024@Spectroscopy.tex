@@ -2,7 +2,7 @@
 
 \colorlet{shadecolor}{teal!10}
 \usepackage[os = mac]{menukeys}
-\usepackage{zref-clever, chemfig}
+\usepackage{zref-clever, tabularx, chemfig}
 \DeclareSIUnit{\amu}{amu}
 \declarekeytheorem{problem}[counter-format = \arabic*., parent = section]
 
@@ -40,10 +40,12 @@
 \addcontentsline{toc}{chapter}{Problem Set}
 \refstepcounter{chapter}
 % \newweek
-% \include{./context/hw1.tex}
-% \newweek
-% \include{./context/hw2.tex}
+\include{./context/hw1.tex}
+\newweek
+\include{./context/hw2.tex}
 \newweek
 \include{./context/hw3.tex}
+\newweek
+\include{./context/hw4.tex}
 
 \end{document}

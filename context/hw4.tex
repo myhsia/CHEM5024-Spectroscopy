@@ -1,0 +1,215 @@
+% !TeX root = ../main.tex
+
+\section{Assignment \#4}
+
+\begin{problem}[note =
+    Molecular Term Symbols and Electronic Band Types in \ce{NO}]
+  \ce{NO} is a heteronuclear diatomic molecule. Because it is heteronuclear, its
+  molecular term symbols do not contain $g/u$ labels.
+
+  The ground electronic state of \ce{NO} is $X^2\Pi$.
+
+  Several electronically excited states are listed below.
+  \begin{center}
+    \begin{tabular}{*3l}
+      \toprule
+      \textbf{State} & \textbf{Molecular term symbol} &
+      \textbf{Approximate character}\\
+      \midrule
+      Ground  state   & $X \prescript2{}\Pi$       &
+      One unpaired electron in a $\pi^*$ orbital\\
+      Excited state A & $A \prescript2{}\Sigma^+$ & 
+      Electronic excitation to a $\sigma$-type state\\
+      Excited state B & $B \prescript2{}\Pi$ & 
+      Electronic excitation to another $\pi$-type state\\
+      Excited state C & $C \prescript4{}\Pi$ & 
+      Quartet excited state\\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  For diatomic electronic transitions, the approximate electric-dipole
+  selection rules are
+  \[
+    \Delta S = 0, \quad \Delta \Lambda = 0, \pm 1.
+  \]
+  A transition with $\Delta \Lambda = 0$ is usually called a
+  \emph{parallel band}, while a transition with $\Delta \Lambda = \pm 1$ is
+  usually called a \emph{perpendicular band}.
+  \paragraph{Tasks}
+  \begin{enumext}
+    \item Explain why $X^2\Pi$ has two spin-orbit components:
+    ${}^2\Pi_{1/2}$ and ${}^2\Pi_{3/2}$.
+    \item Determine whether the following transitions are spin-allowed or
+    spin-forbidden:
+    \begin{enumext}[columns = 3]
+      \item $A \prescript2{}\Sigma^+ \leftarrow X \prescript2{}\Pi$
+      \item $B \prescript2{}\Sigma^+ \leftarrow X \prescript2{}\Pi$
+      \item $C \prescript4{}\Sigma^+ \leftarrow X \prescript2{}\Pi$
+    \end{enumext}
+    \item Explain why heteronuclear molecules such as \ce{NO} do not use $g/u$
+    labels, while homonuclear molecules such as \ce{O2} do.
+  \end{enumext}
+\end{problem}
+\begin{solution}\leavevmode
+  \begin{enumext}
+    \item A $^2\Pi$ state has orbital angular momentum projection $\Lambda = 1$
+    and total spin $S = \frac12$. The projection of the spin onto the
+    internuclear axis is $\Sigma = \pm\frac12$. The total angular momentum
+    projection quantum number is $\Omega = |\Lambda + \Sigma|$, yielding two
+    possible values:
+    \[
+    \Omega = \ab|1 + \frac12| = \frac32 \qq{and}
+    \Omega = \ab|1 - \frac12| = \frac12.
+    \]
+    Spin-orbit coupling causes states with different $\Omega$ to have different
+    energies, so the $^2\Pi$ state splits into two components,
+    denoted $^2\Pi_{3/2}$ and $^2\Pi_{1/2}$.
+    \item Spin-allowed transitions obey $\Delta S = 0$.
+    \begin{enumext}
+      \item $A \prescript2{}\Sigma^+ \leftarrow X \prescript2{}\Pi$: both are
+      doublets ($S = \frac12$), so $\Delta S = 0$ is spin-allowed.
+      \item $B \prescript2{}\Sigma^+ \leftarrow X {^2\Pi}$: both are doublets
+      ($S = \frac12$), so $\Delta S = 0$ is spin-allowed.
+      \item $C \prescript4{}\Sigma^+ \leftarrow X {^2\Pi}$: the excited state is a
+      quartet ($S = \frac32$) while the ground state is a doublet
+      ($S = \frac12$), giving $\Delta S = 1$ spin-forbidden.
+    \end{enumext}
+    \item The labels $g$ (gerade, symmetric) and $u$ (ungerade, antisymmetric)
+    describe the parity of a molecular wavefunction with respect to inversion
+    through the center of inversion. This symmetry operation exists only in
+    molecules with a center of inversion, i.e., homonuclear diatomics like
+    \ce{O2}. Heteronuclear diatomics like \ce{NO} lack an inversion center, so
+    their electronic states cannot be classified as $g$ or $u$.
+  \end{enumext}
+\end{solution}
+
+\begin{problem}[note = Vibronic Transitions and the Franck-Condon Principle]
+  Consider a molecule whose ground and excited electronic states can both be
+  approximated by harmonic potential-energy curves along one normal
+  coordinate $Q$. The excited-state potential is displaced relative to the
+  ground-state potential, but the vibrational frequency is assumed to be the
+  same in both states.
+  \begin{remark}[note = Franck-Condon principle]
+    Electronic transitions are much faster than nuclear
+    motion, so absorption is approximately vertical.
+    \begin{equation}\label{eq:Franck-Condon_principle}
+      I_{0\to n} \propto \upe^{-S} \frac{S^n}{n!}
+    \end{equation}
+  \end{remark}
+  Given parameter $S = 1.20$.
+  \paragraph{Tasks}
+  \begin{enumext}
+    \item Calculate the relative Franck-Condon intensities for $0 \to 0$,
+    $0 \to 1$, $0 \to 2$, $0 \to 3$, and~$0 \to 4$
+    using~\eqref{eq:Franck-Condon_principle}.
+    \item Identify which vibronic peak is expected to be the strongest.
+    \item Explain how the Huang-Rhys factor $S$ reflects the degree of geometry
+    change between the ground and excited electronic states.
+  \end{enumext}
+\end{problem}
+\begin{solution}\leavevmode
+  \begin{enumext}
+    \item Using the given formula
+    \[\begin{alignedat}{2}
+      I_{0\to0} & = \upe^{-1.2} \frac{1.2^0}{0!} = 0.301,\quad &
+      I_{0\to1} & = \upe^{-1.2} \frac{1.2^1}{1!} = 0.361,\\
+      I_{0\to2} & = \upe^{-1.2} \frac{1.2^2}{2!} = 0.217,\quad &
+      I_{0\to3} & = \upe^{-1.2} \frac{1.2^3}{3!} = 0.087,\quad
+      I_{0\to4}   = \upe^{-1.2} \frac{1.2^4}{4!} = 0.026,
+    \end{alignedat}\]
+    \item The $0 \to 1$ transition has the highest relative intensity
+    ($0.361$). Therefore, the $0 \to 1$ vibronic peak is expected to be the
+    strongest in the absorption spectrum.
+    \item The Huang-Rhys factor $S$ directly quantifies the displacement
+    $\Delta Q$ between the equilibrium geometries of the ground and excited
+    electronic states along the normal coordinate $Q$. It is defined as
+    \[
+      S = \frac{\mu\omega}{2\hbar}\,(\Delta Q)^2,
+    \]
+    where $\mu$ is the reduced mass and $\omega$ the vibrational frequency.
+    A larger $S$ corresponds to a larger shift in the equilibrium position,
+    meaning a more substantial geometry change upon electronic excitation.
+    This, in turn, leads to a broader Franck-Condon envelope with intensity
+    spread over higher vibrational quanta. When $S=0$ the two potential minima
+    lie directly above each other and only $0\to 0$ has non-zero intensity.
+  \end{enumext}
+\end{solution}
+
+\begin{problem}[note =
+    {Fluorescence, Phosphorescence, and Delayed Fluorescence}]
+  After photoexcitation, a molecule can undergo several excited-state processes,
+  including fluorescence, phosphorescence, intersystem crossing, and~delayed
+  fluorescence. The following photophysical parameters are measured for three
+  emitters.\par\noindent
+  \begin{minipage}[t]{.48\linewidth}
+    \[
+      \begin{cases*}
+        S   \to S_0 + h\nu_F & (fluorescence)\\
+        T_1 \to S_0 + h\nu_p & (phosphorescence)\\
+        S_1 \to T_1          & (ISC)\\
+        T_1 \to S_1          & (RISC)
+      \end{cases*}
+    \]
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{.48\linewidth}
+    \[
+      \begin{aligned}
+        \tau_F & = \frac1{k_\text{rF} + k_\text{nrS} + k_\text{ISC}}\\
+        \Phi_F & =
+          \frac{k_\text{rF}}{k_\text{rF} + k_\text{nrS} + k_\text{ISC}}.
+      \end{aligned}
+    \]
+  \end{minipage}\par
+  \begin{table}[htbp]
+    \centering
+    \caption{Photophysical Data}
+    \begin{tabularx}{\linewidth}
+      {*2{p{.08\linewidth}}p{.16\linewidth}p{.1\linewidth}Xp{.12\linewidth}}
+      \toprule
+      \textbf{Emitter} & $\boldsymbol{\Delta E_\text{ST}}$  &
+      \textbf{Delayed emission spectrum}& \textbf{Lifetime} &
+      \textbf{Temperature dependence}   & \textbf{Oxygen sensitivity}\\
+      \midrule
+      A & \qty{0.75}\eV & red-shifted from fluorescence & \unit\ms-\unit\s  &
+      weak                   & strongly quenched\\
+      B & \qty{0.06}\eV & same as A                     & \unit\us-\unit\ms &
+      stronger at higher $T$ & quenched\\
+      C & \qty{0.80}\eV & same as A                     & \unit\us          &
+      depends on excitation intensity & quenched\\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+  For Emitter B: $k_\text{rF} = \qty{5.0e7}{\per\s}$,
+  $k_\text{nrS} = \qty{1.0e7}{\per\s}$, $k_\text{ISC} = \qty{4.0e7}{\per\s}$.
+  \paragraph{Tasks}
+  \begin{enumext}
+    \item Calculate the prompt fluorescence lifetime $\tau_F$ of Emitter B.
+    \item Calculate the prompt fluorescence quantum yield $\Phi_F$ of Emitter B.
+    \item Explain why oxygen usually quenches phosphorescence and delayed
+    fluorescence more efficiently than prompt fluorescence.
+  \end{enumext}
+\end{problem}
+\begin{solution}\leavevmode
+  \begin{enumext}
+    \item [(a) (b)] Substituting the parameters into the given equations
+    \begin{align*}
+      \tau_F(B)
+    = \frac{1}{(5 + 1 + 4)\times \num{e7}} = \qty{e-8}{\s},\enspace
+      \phi_F(B)
+    = \frac{\num{5e7}}{(5 + 1 + 4)\times \num{e7}} = 50\%
+    \end{align*}
+    \addtocounter{enumXi}{2}
+    \item Oxygen preferentially quenches phosphorescence and delayed fluorescence due to two key factors
+    \subparagraph{Kinetics (State Lifetimes)}%
+    These emissions rely on long-lived
+    triplet ($T_1$) states (\unit\ms-\unit\s), giving oxygen ample time to
+    diffuse and collide with the excited molecule. Prompt fluorescence
+    originates from the singlet ($S_1$) state, which decays too rapidly
+    (\unit\ns) for significant collisional quenching to occur.
+    \subparagraph{Thermodynamics (Spin Conservation)}%
+    Ground-state oxygen is a
+    triplet ($\ce{^3O2}$). Quenching a triplet emitter via Dexter energy transfer ($\ce{T1} + \ce{^3O2} \to \ce{S0} + \ce{^1O2}$) is spin-allowed
+    and highly efficient because it conserves total spin angular momentum.
+  \end{enumext}
+\end{solution}
