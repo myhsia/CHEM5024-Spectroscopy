@@ -1,0 +1,195 @@
+\documentclass[mode = poster]{westlakethesis}
+
+\usepackage[width  = 45, size        = custom, 
+            height = 80, orientation = portrait]{beamerposter}
+\linespread{1.25}
+\usepackage{newtxmath, mathtools, physics3, subcaption, siunitx, microtype}
+\usephxmodu{operator}
+\DeclareSIUnit\angstrom{\text{\r A}}
+\DeclareSIUnit\calorie {\text{cal}}
+\usepackage{chemfig}
+\usepackage[version = 4]{mhchem}
+\usetikzlibrary{decorations.pathmorphing, calc}
+\usepackage{zref-clever, multicol}
+
+\westlakeset{
+  title     = Coherent Vibrational Wavepacket Dynamics,
+  author    = Mingyu Xia (\texttt{20251202247}) \texttt|
+              Department of Physics \texttt| Wenjie Dou's Group/
+              Mingyu Xia \texttt| Department of Physics,
+  subject   = Molecular Spectroscopy (CHEM5024) Final Project,
+  bibsource = reference.bib
+}
+
+\begin{document}
+
+\begin{frame}
+
+\maketitle
+
+\begin{columns}[T, onlytextwidth]
+  \begin{column}{.485\linewidth}
+    \begin{block}{Motivation}
+      \begin{itemize}
+        \item \textbf{Role:} Light-sensitive molecules drive essential
+        functions, including vision and molecular switches.
+        \item \textbf{Mechanism:} Ultrashort laser pulses (duration $<$
+        vibrational period) excite molecules, generating coherent vibrational
+        wavepackets\cite{zewail2000femtochemistry}.
+        \item \textbf{Goal:} Tracking wavepacket evolution
+        (\zcref[S]{fig:wavepacket}) maps excited-state potential energy
+        surfaces (PES) and reveals reaction coordinates.
+      \end{itemize}
+    \end{block}
+    \begin{exampleblock}{Theoretical Model}
+      Wavepacket creation relies on the superposition of energy states via
+      coherent femtosecond preparation
+      \begin{equation}
+        \Psi(R,t) = \sum_i c_i \psi_i(R) \exp(-\iu E_it/\hbar)
+        \label{eq:wavepacket}
+      \end{equation}
+      \vskip-6pt
+      \begin{itemize}
+        \item Phase terms establish quantum coherence, allowing the system to
+        evolve within a specific region.
+        \item Minimal wavepacket (localized) spreading validates a classical
+        picture of nuclear dynamics \cite{zewail2000femtochemistry}.
+      \end{itemize}
+    \end{exampleblock}
+    \begin{exampleblock}{Experimental Method}
+      Ultrafast dynamics are observed via Transient Absorption (TA) and
+      Time-Resolved Fluorescence (TRF) \cite{liebel2015principles}.
+      \begin{itemize}
+        \item \textbf{Pump Pulse:} Excites molecule to Franck-Condon state;
+        launches wavepacket.
+        \item \textbf{Probe Pulse:} Monitors temporal evolution as PES
+        wavepacket oscillations generate quantum beats.
+        \item \textbf{Data Analysis:} Fourier Transform (FT) algorithms extract
+        vibrational frequencies.
+      \end{itemize}
+    \end{exampleblock}
+  \end{column}
+  \hfill
+  \begin{column}{.485\linewidth}
+    \begin{alertblock}{Conclusions \& Outlooks}
+      \begin{itemize}
+        \item Quantum beat damping reveals the timescales and coupling
+        strengths of conical intersection dynamics.
+        \item Attosecond X-ray probing and 2D spectroscopy will dissect
+        vibronic coupling, enabling coherent control of reaction pathways.
+      \end{itemize}
+    \end{alertblock}
+    \begin{figure}[htbp]
+      \centering
+      \includegraphics[width = .96\linewidth]{image3.png}
+      \caption{Coherent, localized wave packet (de Broglie length
+      $\sim\qty{0.04}\angstrom$) for a 20 fs pulse.
+      Inset: Young's Double Slit Interference.}
+      \label{fig:wavepacket}
+    \end{figure}
+  \end{column}
+\end{columns}
+
+\vskip18pt
+
+\begin{block}{Results and Discussion}
+\begin{itemize}
+  \item \textbf{Azobenzene:} TA shows two decay paths: \qty{170}{\fs}
+  ($S_2 \to S_1$ via planar internal conversion) and \qty{420}{\fs}
+  ($S_{3,4}$ via ring-localized dynamics), with the latter reducing
+  isomerization yield.
+  \item \textbf{Retinal-like Chromophores:} Coherent nuclear motion drives
+  11-cis to 11-trans isomerization through a twisted conical intersection within
+  \qty{200}{\femto\second}, proving initial coherent dynamics drive structural
+  change \cite{schoenlein1991first}.
+  \item \textbf{Organic Dyes:} Rigid dyes exhibit long-lived oscillations
+  (picoseconds). TRF dynamically maps the Stokes shift before solvent
+  decoherence terminates the beats.
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \begin{minipage}[b]{.48\linewidth}
+      \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width = .8\linewidth]{image2.png}
+        \caption{Relaxation pathways for the $S_2$, $S_3$, and $S_4$
+          (near-degenerate $\pi\pi^*$) states in azobenzene.}
+        \label{fig:pes_azo}
+      \end{subfigure}
+      \begin{subfigure}{\linewidth}
+        \begin{equation}
+          \setchemfig{
+            bond style = {line width = 2.4pt}, double bond sep = 6pt,
+            atom sep   = 1.2em, atom style = {scale = .67}}
+          \begin{array}{cc}
+          \chemfig[bond join, baseline = (ring1)]{*6(
+            --(-)=(
+              -[:30]=_[:-30]
+              -[:30](-[2, 1]CH_3)=_[:-30]
+              -[:30](-[2, .5,,, draw = none]11)
+            =_[:-30](-[0, .5,,, draw = none]12)
+              -[-2]
+              (-[:-150, sqrt(3)]CH_3)
+              =_[:-30]
+              -[-2]
+              =_[:-30]NH
+              -[-2, .4]-[-2, .6,,, decorate, decoration =
+                {snake, amplitude = .5mm, segment length = 2mm}]
+              )-(-[3, .75])(-[1, .75])-@{ring1}-)
+          }
+          \xlongrightarrow{h\nu} \quad &
+          \chemfig[bond join, baseline = (ring2.base)]{
+            *6(
+            --(-)=(
+              -[:30]=_[:-30]
+              -[:30](-[2, 1]CH_3)=_[:-30]
+              -[:30](-[2, .5,,, draw = none]11)
+            =_[:-30](-[-2,.5,,, draw = none]12)
+              -[:30](-[2, 1]CH_3)=_[:-30]
+              -[:30]=_[:-30]
+              \chembelow{N}{H}
+              -[1, .4]-[1, .6,,, decorate, decoration =
+                {snake, amplitude = .5mm, segment length = 2mm}]
+              )-(-[3, .75])(-[1, .75])-@{ring2}-)
+          }\\
+          \text{11-cis rhodopsin} & \text{All-trans photoproduct}
+          \end{array}
+        \end{equation}
+        \caption{Reaction process of 11-cis to all-trans isomerization.}
+        \label{eq:rhodopsin}
+      \end{subfigure}
+    \end{minipage}
+    \hfill
+    \begin{subfigure}[b]{.48\linewidth}
+      \centering
+      \begin{tikzpicture}
+        \node [draw, thick, inner sep = 0pt, outer sep = 0pt] (fig2c)
+          {\includegraphics[width = .54\linewidth]{image1.png}};
+        \node [right] at
+          ($(fig2c.south east)!\fpeval{.5/13.25}!(fig2c.north east)$) {$0$};
+        \node [right] at
+          ($(fig2c.south east)!\fpeval{5.5/13.25}!(fig2c.north east)$) {$50$};
+        \node [right] at
+          ($(fig2c.south east)!\fpeval{10.5/13.25}!(fig2c.north east)$) {$100$};
+        \node [below = 1ex] at (fig2c.south) {Isomerization Coordinate};
+        \node [above = 1ex, rotate around = {90:(fig2c.west)}] at (fig2c.west)
+          {Energy (\unit{\kilo\calorie\per\mole})};
+      \end{tikzpicture}
+      \caption{Ground/excited-state PES for rhodopsin isomerization along the
+        nonadiabatic path.}
+      \label{fig:pes_rho}
+    \end{subfigure}
+    \caption{Schematic PES governing ultrafast photoisomerization.}
+    \label{fig:reaction_pathways}
+\end{figure}
+\end{block}
+
+\gbtsetup{shortjournal}
+\begin{exampleblock}{References}
+  \begin{multicols}{2}
+    \small \printbibliography
+  \end{multicols}
+\end{exampleblock}
+\end{frame}
+
+\end{document}
