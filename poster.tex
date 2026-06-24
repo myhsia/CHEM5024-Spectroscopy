@@ -97,7 +97,7 @@
   \item \textbf{Azobenzene:} TA shows two decay paths: \qty{170}{\fs}
   ($S_2 \to S_1$ via planar internal conversion) and \qty{420}{\fs}
   ($S_{3,4}$ via ring-localized dynamics), with the latter reducing
-  isomerization yield.
+  isomerization yield\cite{schultz2003mechanism}.
   \item \textbf{Retinal-like Chromophores:} Coherent nuclear motion drives
   11-cis to 11-trans isomerization through a twisted conical intersection within
   \qty{200}{\femto\second}, proving initial coherent dynamics drive structural
@@ -111,7 +111,7 @@
     \begin{minipage}[b]{.48\linewidth}
       \begin{subfigure}{\linewidth}
         \centering
-        \includegraphics[width = .8\linewidth]{image2.png}
+        \includegraphics[width = .75\linewidth]{image2.png}
         \caption{Relaxation pathways for the $S_2$, $S_3$, and $S_4$
           (near-degenerate $\pi\pi^*$) states in azobenzene.}
         \label{fig:pes_azo}
@@ -119,8 +119,8 @@
       \begin{subfigure}{\linewidth}
         \begin{equation}
           \setchemfig{
-            bond style = {line width = 2.4pt}, double bond sep = 6pt,
-            atom sep   = 1.2em, atom style = {scale = .67}}
+            bond style = {line width = 2.4pt, cap = round},
+            double bond sep = 6pt, atom sep = 1.2em, atom style = {scale = .67}}
           \begin{array}{cc}
           \chemfig[bond join, baseline = (ring1)]{*6(
             --(-)=(
@@ -129,15 +129,15 @@
               -[:30](-[2, .5,,, draw = none]11)
             =_[:-30](-[0, .5,,, draw = none]12)
               -[-2]
-              (-[:-150, sqrt(3)]CH_3)
+              (-[:-150, \fpeval{sqrt(3)}]CH_3)
               =_[:-30]
               -[-2]
               =_[:-30]NH
-              -[-2, .4]-[-2, .6,,, decorate, decoration =
+              -[-2, .8]-[-2, .8,,, decorate, decoration =
                 {snake, amplitude = .5mm, segment length = 2mm}]
               )-(-[3, .75])(-[1, .75])-@{ring1}-)
           }
-          \xlongrightarrow{h\nu} \quad &
+          \kern-1em\xlongrightarrow{h\nu} \enspace &
           \chemfig[bond join, baseline = (ring2.base)]{
             *6(
             --(-)=(
@@ -148,7 +148,7 @@
               -[:30](-[2, 1]CH_3)=_[:-30]
               -[:30]=_[:-30]
               \chembelow{N}{H}
-              -[1, .4]-[1, .6,,, decorate, decoration =
+              -[1, .8]-[1, .8,,, decorate, decoration =
                 {snake, amplitude = .5mm, segment length = 2mm}]
               )-(-[3, .75])(-[1, .75])-@{ring2}-)
           }\\
@@ -164,7 +164,7 @@
       \centering
       \begin{tikzpicture}
         \node [draw, thick, inner sep = 0pt, outer sep = 0pt] (fig2c)
-          {\includegraphics[width = .54\linewidth]{image1.png}};
+          {\includegraphics[width = .51\linewidth]{image1.png}};
         \node [right] at
           ($(fig2c.south east)!\fpeval{.5/13.25}!(fig2c.north east)$) {$0$};
         \node [right] at
