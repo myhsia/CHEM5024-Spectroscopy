@@ -2,7 +2,7 @@
 
 \colorlet{shadecolor}{teal!10}
 \usepackage[os = mac]{menukeys}
-\usepackage{zref-clever, tabularx, chemfig}
+\usepackage{zref-clever, tabularx, chemfig, soul}
 \DeclareSIUnit{\amu}{amu}
 \declarekeytheorem{problem}[counter-format = \arabic*., parent = section]
 
@@ -19,6 +19,7 @@
 }
 \usepackage[backend = bibtex, natbib, style = phys, biblabel = brackets, sorting = none]{biblatex}
 \addbibresource{reference-hw5.bib}
+\numberwithin{example}{chapter}
 
 \begin{document}
 
@@ -27,9 +28,13 @@
 \tableofcontents
 \mainmatter
 
+\include{./context/chapter0}
 \include{./context/chapter1}
 \include{./context/chapter2}
 \include{./context/chapter3}
+\include{./context/chapter4}
+\include{./context/chapter5}
+\include{./context/chapter6}
 
 \newcommand \sectionname {Lecture \#}
 \appendix

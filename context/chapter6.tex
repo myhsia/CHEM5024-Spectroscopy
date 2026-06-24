@@ -1,0 +1,87 @@
+% !TeX root = ../main.tex
+
+\chapter{Nonlinear Spectroscopy Techniques}
+
+\section{Macroscopic Polarization and Frequency Generation}
+
+\begin{itemize}
+  \item \textbf{Linear Regime:} Single incident light field interaction where the induced dipole forms a first-order polarization: $P^{(1)} = \chi^{(1)}E$.
+  \item \textbf{Nonlinear Regime:} Multiple intense light fields induce higher-order polarization expressed as a power series:
+  \begin{equation}
+    P = \chi^{(1)}E + \chi^{(2)}E^2 + \chi^{(3)}E^3 + \dots
+  \end{equation}
+  where $\chi^{(n)}$ represents the $n$-th order nonlinear susceptibility.
+  \item \textbf{Generation of New Frequencies:} Frequency mixing from $P^{(2)}$ generates new distinct output frequencies:
+  \begin{itemize}
+    \item Second Harmonic Generation (SHG): $2\omega_1, 2\omega_2$ 
+    \item Sum Frequency Generation (SFG): $\omega_1 + \omega_2$ 
+    \item Difference Frequency Generation (DFG): $\omega_1 - \omega_2$ 
+    \item Optical Rectification: DC term 
+  \end{itemize}
+\end{itemize}
+
+\section{Phase Matching Condition}
+\begin{itemize}
+  \item Coherent signal generation requires satisfying phase matching to fulfill fundamental conservation laws:
+  \begin{enumerate}
+    \item \textbf{Energy Conservation:} $\omega_\text{signal} = \sum \pm \omega_i$ 
+    \item \textbf{Momentum Conservation (Wave-vector):} $\bm k_\text{signal} = \sum \pm \bm k_i$ 
+  \end{enumerate}
+  \item \textbf{The Dispersion Problem:} Because the refractive index is frequency-dependent ($n(\omega)$), energy and momentum conservation cannot simultaneously be satisfied in isotropic media.
+  \item \textbf{Exam Solution Rule:} Achieved using a \textbf{birefringent material}. Utilizing different light polarizations (ordinary/extraordinary rays) forces index curves to intersect, satisfying both conditions.
+\end{itemize}
+
+\section{Ensemble Regime: Dephasing and Broadening}
+\begin{itemize}
+  \item \textbf{Density Matrix:} Replaces individual wavefunctions in bulk ensembles. Diagonal elements track state \textbf{populations}; off-diagonal elements track quantum \textbf{coherences}.
+  \item \textbf{Dephasing:} In-phase dipoles driven at $t = 0$ gradually lose phase alignment over time due to random thermal and solvent fluctuations.
+  \item \textbf{Linewidth Connection:} Dephasing lifetime ($T_2$) is inversely proportional to spectral linewidth ($\Delta\nu$). A longer $T_2$ yields a narrower peak.
+  \item \textbf{Broadening Mechanisms (Exam Target):}
+  \begin{itemize}
+    \item \textbf{Homogeneous Broadening:} Molecules are identical at $t = 0$; the peak broadens dynamically via uniform dephasing over time.
+    \item \textbf{Inhomogeneous Broadening:} Molecules experience varying static local environments at $t = 0$, generating an initial distribution of different frequencies.
+  \end{itemize}
+  \item \textbf{Response Function Rule:} Quantifies the \textbf{time correlation} between the induced dipole at $t = 0$ and subsequent times. \textit{(Detailed equations are not required for the exam.)}
+\end{itemize}
+
+\section{Surface and Interface-Specific Spectroscopy}
+
+\begin{itemize}
+  \item \textbf{Symmetry Breaking:} Centrosymmetric bulk inversion dictates that reversing fields ($E \rightarrow -E$) reverses polarization ($P \rightarrow -P$). For a second-order process:
+  \begin{equation}
+      -P^{(2)} = \chi^{(2)}(-E)^2 = \chi^{(2)}E^2 = P^{(2)} \implies \chi^{(2)} = 0
+  \end{equation}
+  Thus, $\chi^{(2)}$ vanishes in bulk but is non-zero ($\chi^{(2)}\neq 0$) at surfaces due to broken centrosymmetry.
+  \item \textbf{SFG Selection Rules:} Interface-specific process combining simultaneous IR absorption and Raman scattering. Active \textbf{only if the mode is both IR active and Raman active}.
+  \item \textbf{Orientation Mapping:} Modulating incident beams (S vs. P polarization) isolates $\chi^{(2)}$ tensor components to compute molecular orientation. \textit{(Rigorous matrix calculus is not tested.)}
+\end{itemize}
+
+\section{Surface-Enhanced Third-Order Spectroscopy}
+
+\begin{itemize}
+  \item Bulk third-order signals do not vanish ($\chi^{(3)}\neq 0$). Massive bulk volumes naturally overwhelm surface signals in techniques like \textbf{CARS}.
+  \item \textbf{Mechanism for Surface Sensitivity:} Applying plasmonic nanostructures creates localized fields that drastically amplify the electric field within nanometers of the surface, isolating the interface signal (Surface-Enhanced CARS/SRS).
+\end{itemize}
+
+\section{Time-Resolved Spectroscopy and Dynamics}
+
+\begin{itemize}
+  \item \textbf{From Structure to Dynamics:} Shifts focus from mapping static structures to tracking time-dependent energy pathways and structural interactions.
+  \item \textbf{Time Delay ($\tau$):} The precise, variable time gap introduced between the initiating ``Pump'' pulse and the interrogating ``Probe'' pulse.
+  \item \textbf{Transient Absorption (Pump-Probe) Signals (Exam Target):}
+  Measures differential absorption: $\Delta A = A_\text{pumped} - A_\text{unpumped}$.
+  \begin{enumerate}
+    \item \textbf{Ground State Bleach (GSB):} Negative signal ($\Delta A < 0$). Pump depletes the ground state; matches the linear 1D absorption frequency.
+    \item \textbf{Stimulated Emission (SE):} Negative signal ($\Delta A < 0$). Probe stimulates decay from the populated excited state; typically overlaps with GSB.
+    \item \textbf{Excited State Absorption (ESA):} Positive signal ($\Delta A > 0$). Probe excites populated molecules to higher energetic states ($S_1 \rightarrow S_n$).
+    \item \textbf{Anharmonic Shift Rule:} Due to anharmonicity, the $1 \rightarrow 2$ energy gap is smaller than the $0 \rightarrow 1$ gap. The positive ESA peak always shifts to a \textbf{lower frequency / longer wavelength} relative to GSB.
+  \end{enumerate}
+\end{itemize}
+
+\section{2D Spectroscopy and Cross Peaks}
+
+\begin{itemize}
+  \item \textbf{Pulse Scheme:} Third-order technique using three incoming pulses to generate a spectrum with two frequency axes: Excitation (Pump) and Detection (Probe).
+  \item \textbf{Diagonal Peaks:} Located along $\omega_\text{pump} = \omega_\text{probe}$, replicating standard 1D linear spectral profiles.
+  \item \textbf{Cross Peaks (The Core Value):} Located off-diagonal ($\omega_\text{pump}\neq \omega_\text{probe}$); explicitly reveals \textbf{coupling} between modes, energy transfer, or dynamic chemical exchange.
+\end{itemize}

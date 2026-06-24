@@ -1,0 +1,224 @@
+% !TeX root = ../main.tex
+
+\chapter{Vibrational Spectroscopy}
+
+\section{Harmonic Oscillator (HO) Approximation}
+
+The harmonic oscillator is the simplest model to describe molecular vibrations,
+representing a bond as a spring. The restoring force is proportional to the
+displacement from equilibrium.
+\begin{paracol}{2}
+  \begin{itemize}
+    \item Schr\"odinger Equation
+    \[
+      \hat H \Psi = E \Psi, \quad
+      \ab\bigg[
+        \underbrace{\vphantom{\frac\mu\mu}
+          -\frac{\hbar^2}{2\mu}\pdv[2]{}\xi}_\text{Kinetic Operator}
+        \underbrace{\vphantom{\frac\mu\mu}
+          +\frac12k\xi^2}_\text{Potential Operator}] \Psi = E\Psi
+    \]
+    \item \hl{Quantized Energy Levels}
+    \[
+      E_n = \ab(n + \frac12) h\nu
+    \]
+    \hl{The energy levels are evenly spaced.}
+  \end{itemize}
+  \switchcolumn
+  \vfill
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width = .8\linewidth]{fig5-1.jpg}
+    \caption{Harmonic Oscillator Energy Levels and Wavefunctions}
+  \end{figure}
+  \vfill
+\end{paracol}
+
+\section{Infrared (IR) Activity and Molecular Dipole}
+
+Dipole and transition moment expansions
+\[
+  \mu = \mu_e + (\odv\mu/\xi)_e\xi + \dots,\quad
+  \braket<\psi'|\bm\mu|\psi''>
+= \bm \mu_e \int \psi'^* \psi'' \d\xi
++ \ab(\odv {\bm\mu}\xi)_\text{equilibrium} \int \psi'^* \xi \psi''\d\xi + \dots
+\]
+The higher-order terms are zero due to wavefunction orthogonality.
+\begin{itemize}
+  \item The \hl{molecular dipole moment must change
+  ($(\odv \mu/\xi)_\text{equilibrium} \neq 0$) during the vibration}
+  for a vibrational transition to be \hl{IR active}.
+  \item \hl{Transition Dipole Moment: Non-zero to to allow IR transition}
+  \[
+    M_{v'v} = \int \psi_{v'}^*(\xi) \hat{\mu}(\xi) \psi_v(\xi) \d\xi \neq 0
+  \]
+  \item Selection Rule: \hl{$\Delta v = \pm 1$. Only transitiions between
+  adjacent vibrational levels are allowed.}
+\end{itemize}
+
+\section{Raman Spectroscopy}
+
+\hl{Raman spectroscopy involves the inelastic scattering of light, governed by
+a change in polarizability $\alpha$, not the dipole moment.}
+\begin{itemize}
+  \item \texttt{(Stokes|Rayleigh|Anti-Stokes)} Scattering:
+  Photon \texttt{(loses|keeps|gains)} energy to molecule.
+  \begin{figure}[htbp]
+    \begin{minipage}{.6\linewidth}
+      \centering
+      \includegraphics[height = .54\textwidth]{fig5-2.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.36\linewidth}
+      \includegraphics[height = .9\textwidth]{fig5-3.png}
+    \end{minipage}
+  \end{figure}
+  \item Polarizability ($\alpha$):
+  The ability of the electron cloud to be distorted,
+  \hl{governs Raman Activity}.
+  \[
+    \alpha(r) = \alpha(0) + \ab\bigg(\pdv\alpha r)_0 r
+      + \frac12 \ab\bigg(\pdv[2]\alpha r)_0 r^2 + \dots
+  \]
+  \hl{For a mode to be Raman active, the first derivative $(\pdv\alpha/r)_0$
+  must be non-zero.}
+\end{itemize}
+\begin{example}[\ce{CO2}]\leavevmode
+\begin{enumext}
+  \item \textbf{Symmetric Stretch}
+  \begin{itemize}
+    \item \menu[,]{%
+      Tightness of electrons changes, \hl{Electron cloud distortion changes},
+      Raman Active}
+    \item \menu[,]{%
+      Both \ce{C-O} bonds lengthen or shorten together,
+      create \hl{no net dipole moment, \emph{IR Inactive}}}
+  \end{itemize}
+  \item \textbf{Bending:}
+  \begin{itemize}
+    \item \menu[,]{%
+      Up/down-ward bends are equivalent $\alpha(+Q) = \alpha(-Q)$,
+      1st-order polarizability change cancels, Raman Inactive
+    }
+    \item \menu[,]{%
+      Instantaneous bending creates a transient dipole,
+      IR active}
+  \end{itemize}
+\end{enumext}
+\begin{remark}
+  \menu[,]{$\mu(Q) \approx bQ$, $(\pdv\mu/Q)_0 \neq 0$, IR active}\hfill
+  \menu[,]{$\alpha(Q) \approx \alpha_0 + aQ^2$, $(\pdv\alpha/Q)_0 = 0$,
+    fundamental Raman Inactive}\par
+  Second-order terms can contribute to overtones / combination bands.
+\end{remark}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{*5{>\footnotesize l}}
+    \toprule
+    Vib. Mode & Equilibrium Structure
+              & Symmetrical Stretch
+              & Asymmetrical Stretch
+              & Bending\\
+    \midrule
+    Activity &
+    No activity at equality   &
+    IR Inactive, Raman Active &
+    IR Active, Raman Inactive &
+    IR Active, Raman Inactive \\
+    \bottomrule
+  \end{tabular}
+  \caption{\ce{CO2} IR and Raman Activity Summary}
+\end{table}
+\end{example}
+
+\section{Anharmonicity}
+
+\hl{Real molecules} do not perfectly obey Hooke's law because they
+\hl{dissociate at large interatomic distances and repel strongly at short
+distances}. This leads to the \hl{Morse Potential}.
+\begin{itemize}
+  \item Energy Spacing:
+  \hl{As the quantum number increases, the energy spacing gets smaller.}
+  \[
+    \tilde G(\nu) = (\nu + 1/2) \tilde \nu_e - (v + 1/2)^2 \tilde \nu_e \chi_e
+    \unit{\per\cm}
+  \]
+  \item \hl{Selection Rule Breakdown}:
+  Transitions like $\Delta v = \pm 2, \pm 3$ become allowed.
+  \item \hl{Overtone Bands}:
+  \hl{Transitions starting from $v = 0$ (fundamental band) to $v > 1$}.
+  They \hl{are weaker and appear at slightly lower frequencies than exact
+  multiples of the fundamental}.
+  \item \hl{Hot Bands}:
+  \hl{Transitions starting from excited states}.
+\end{itemize}
+
+\section{Fermi Resonance}
+
+Fermi resonance occurs when two \hl{nearly degenerate vibrational states} of
+the \hl{same symmetry} interact via \hl{non-zero anharmonic coupling}.
+Brings the effects
+\begin{enumext}
+  \item \hl{Level splitting} (energy levels repel and move apart).
+  \item \hl{Intensity borrowing} (a weak overtone/combination band borrows
+  intensity from a bright fundamental band).
+  \item \hl{Mixed eigenstate assignments} (Observed peaks are mixed states,
+  not pure fundamental or pure overtone bands).
+\end{enumext}
+\begin{center}
+  \includegraphics[width = \linewidth]{fig5-4.jpg}
+\end{center}
+
+\section{Rovibrational Spectroscopy}
+
+Transitions involve \hl{simultaneous changes} in \hl{vibrational} ($v$) and
+\hl{rotational} ($J$) \hl{quantum numbers}.
+\begin{itemize}
+  \item Branches transitions allowed for \ce{NO}: $\Delta \nu = +1$
+  \begin{enumext}[columns = 3]
+    \item P: $\Delta J = -1$ (lower $\nu$)
+    \item Q: $\Delta J =  0$ (band center)
+    \item R: $\Delta J = +1$ (higher $\nu$)
+  \end{enumext}
+  \item Linear Polyatomic Molecules:
+  \begin{itemize}
+    \item Parallel Vibrations: Transition dipole is parallel to the molecular
+    axis (e.g., asymmetric stretch). \hl{Q-branch is absent}.
+    \item Perpendicular Vibrations: Transition dipole is perpendicular to the
+    molecular axis (e.g., bending mode).
+    \hl{Q-branch is present and often prominent}.
+  \end{itemize}
+\end{itemize}
+
+\section{Vibrational Circular Dichroism (VCD) and Chirality}
+
+VCD is used to detect molecular chirality based on differential absorption of
+left- and right-circularly polarized light.
+\begin{itemize}
+  \item A single vector (linearly polarized light) cannot detect chirality.
+  Chirality requires 3D structure and two non-parallel vectors.
+  \item The VCD signal arises from the interaction involving both the
+  \hl{electric transition dipole moment} and the
+  \hl{magnetic transition dipole moment}.
+\end{itemize}
+Starting from transition probability
+\[
+  M = M_{E1} + M_{M1},\quad
+  |M|^2 = |M_{E1}|^2 + |M_{M1}|^2 + 2\Re[M_{E1}M_{M1}^*]
+\]
+Using the relations
+\[
+  M_{E1} \propto \bm \mu_{01} \cdot \mathbf E,\quad
+  M_{M1} \propto \bm   m_{01} \cdot \mathbf B, \quad
+  \mathbf B_{(L/R)} = \mp \frac\iu c \mathbf E_{(L/R)}
+\]
+Then, the interference term
+\[
+  2\Re[M_{E1}M_{M1}^*] \propto \pm 2\Im[\mu_{01} \cdot m_{10}],
+\]
+and $\Delta A = A_L - A_R$ is proportional to the VCD quantity
+$R_{01} = \Im[\mu_{01} \cdot m_{10}]$.
+\begin{remark}
+  \hl{LCP and RCP give opposite signs because the $\pm \iu$ factor changes sign
+    for left- and right circular polarization.}
+\end{remark}

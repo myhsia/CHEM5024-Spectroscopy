@@ -1,0 +1,90 @@
+% !TeX root = ../main.tex
+
+\chapter{Electronic Spectroscopy}
+
+\section{Electrons in Atoms and Molecules}
+
+\begin{itemize}
+  \item Atomic Term Symbol: Reflects spin, orbital, and total angular
+  momentum. (Not heavily tested).
+  \item Molecular Term Symbol: Describes electronic states in molecules.
+  \item Symmetry ($g/u$): Gerade ($g$) is symmetric under inversion;
+  ungerade ($u$) is antisymmetric. 
+  \begin{enumext}[label = \textbullet, columns = 3]
+    \item $g \times g = g$
+    \item $u \times u = g$
+    \item $g \times u = u$
+  \end{enumext}
+  \item Excited States: You form term symbols by determining the configuration
+  of unoccupied or partially occupied orbitals. (Closed shells can be ignored).
+\end{itemize}
+
+\section{Selection Rules for Electronic Transitions}
+\begin{itemize}
+    \item \hl{Spin Selection Rule: $\Delta S = 0$.}
+    (Singlet to Singlet is allowed; Singlet to Triplet is forbidden).
+    \item Franck-Condon Principle: \hl{Electronic transitions are much faster
+    than nuclear motion.} The transition intensity
+    \hl{depends on the Franck-Condon factor}
+    \[
+      I_{\text i\to\text f} \propto |\mu_\text{eg}|^2
+      |\braket<\chi_f|\chi_i>|^2
+    \]
+    \item \hl{A vibronic transition changes both electronic and vibrational
+      quantum numbers}, $S_0(v) \to S_1(v')$.
+    \item \hl{Franck-Condon factors control the relative intensities of
+    virbronic peaks.}
+\end{itemize}
+
+\section{The Jablonski Diagram and Excited State Dynamics}
+Describes pathways for energy dissipation after an electronic excitation.
+
+\subsection{Non-Radiative Decay}
+
+\begin{itemize}
+  \item \textit{Vibrational Relaxation (VR):} Loss of energy as heat to the
+  solvent.
+  \item \textit{Internal Conversion (IC):} Transition between states of the
+  same spin multiplicity (e.g., $S_2 \rightarrow S_1$).
+\end{itemize}
+
+\subsection{Radiative Decay}
+
+\begin{itemize}
+  \item \textit{Fluorescence:} Emission from $S_1 \rightarrow S_0$.
+  Occurs at lower energy (longer wavelength) than absorption.
+\end{itemize}
+
+\subsection{Intersystem Crossing (ISC) \& Phosphorescence}
+
+\begin{itemize}
+  \item \textit{ISC:} Transition from $S_1 \rightarrow T_1$. This breaks the
+  spin selection rule ($\Delta S \neq 0$).
+  \item \textit{Spin-Orbit Coupling (SOC):} Mixes singlet and triplet
+  characters, allowing ISC to happen. Influenced by the heavy atom effect
+  ($Z^4$), orbital type changes, and small energy gaps.
+  \item \textit{Phosphorescence:} Emission from $T_1 \rightarrow S_0$.
+  Very long lifetime compared to fluorescence.
+\end{itemize}
+
+\subsection{Delayed Fluorescence}
+
+\begin{itemize}
+  \item \textit{Thermally Activated Delayed Fluorescence (TADF):} Reverse ISC
+  ($T_1 \rightarrow S_1$) overcome by thermal energy.
+  \item \textit{Triplet-Triplet Annihilation (TTA):} Two triplet states diffuse
+  and combine to form one singlet excited state and one ground state.
+\end{itemize}
+
+\begin{figure}[htbp]
+  \begin{minipage}{.64\linewidth}
+    \includegraphics[width = \linewidth]{fig6-3-1.jpg}\\
+    \includegraphics[width = \linewidth]{fig6-3-2.jpg}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.32\linewidth}
+    \includegraphics[width = \linewidth]{fig6-3-3.jpg}
+  \end{minipage}
+  \caption{The Jablonski Diagram, each arrow corresponds to a pathway and a
+    rate constant.}
+\end{figure}
