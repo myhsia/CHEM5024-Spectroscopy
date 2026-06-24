@@ -1,4 +1,167 @@
 % !TeX root = ../main.tex
 
-\section{Assignment \#5: Nonlinear Spectroscopy Application on Campus}
+\section{Assignment \#5}
 
+\begingroup
+\renewcommand \thesubsection {\arabic{subsection}.}
+\renewcommand \chapter [2]{}
+
+\paragraph{Nonlinear Spectroscopy Application on Campus}
+\leavevmode \par
+Water Films, Pollutants, and Coatings on Architectural Glass.
+\begin{enumerate*}
+  \item Molecules in adsorbed water films,
+  \item pollutants, and
+  \item coatings on building glass surfaces.
+\end{enumerate*}
+
+\subsection{Sample Collection and Preparation}
+
+Samples will be collected from an architectural facade exposed to the campus
+environment to capture real-world degradation. The glass samples will be cut to
+uniform dimensions and cleaned via standard protocols (e.g., detergent wash, DI
+water rinse, and nitrogen drying) to establish a baseline.
+
+For pollutant studies, samples will be kept pristine or artificially aged under
+controlled conditions (e.g., exposure to 80--90\% relative humidity with trace
+levels of \ce{SO2} and \ce{NO2} for 1--7 days) to simulate realistic
+atmospheric aging and control the thickness of the adsorbed water film and
+chemical contaminant layer.
+
+\subsection{Choice of Nonlinear Spectroscopic Technique}
+
+We will utilize Vibrational Sum-Frequency Generation (VSFG) spectroscopy.
+VSFG is an even-order nonlinear optical process that is inherently
+surface-specific, as it is symmetry-forbidden in centrosymmetric bulk media but
+allowed at interfaces where the inversion symmetry is
+broken~\cite{jubb2012environmental}.
+
+Unlike linear infrared reflection or Raman scattering, VSFG selectively probes
+only the top few molecular layers, making it ideal for distinguishing the
+molecular signal of surface water and adsorbed pollutants from the bulk glass
+substrate~\cite{jubb2012environmental,shen2016fundamentals}.
+
+\subsection{Optical Setup and Experimental Geometry}
+
+The optical setup requires a dual-beam geometry where a tunable infrared (IR)
+beam (\qtyrange{2.5}{10}{\um}) and a fixed visible beam (\qty{532}{\nm}, from a
+Nd:YAG laser) are overlapped spatially and temporally at the glass surface,
+typically at incidence angles of $\sim \qty{55}{\degree}$ and
+$\sim \qty{60}{\degree}$ relative to the surface normal, respectively.
+
+The standard experimental arrangement utilizes four common polarization
+combinations: ssp, sps, pss, and ppp. The ssp combination is the most widely
+utilized for high-intensity surface sensitivity~\cite{jubb2012environmental}.
+
+The effective second-order susceptibility for each polarization is determined
+by the Fresnel factors $L_\text{ii}$ and the incident/output angles
+$\theta_\text i$. For the four standard polarization
+combinations~\cite[p.~108]{jubb2012environmental}
+\begin{equation}\label{eq:fresnel}
+  \begin{aligned}
+    \chi_\text{eff, ssp}^{(2)} &
+  = L_{yy}(\omega_\text{SFG})L_{yy}(\omega_\text{vis})L_{zz}(\omega_\text{IR})
+    \sin\theta_\text{IR} \chi_{yyz}, \\
+    \chi_\text{eff, sps}^{(2)} &
+  = L_{yy}(\omega_\text{SFG})L_{zz}(\omega_\text{vis})L_{yy}(\omega_\text{IR})
+    \sin\theta_\text{vis} \chi_{yzy}, \\
+    \chi_\text{eff, pss}^{(2)} &
+  = L_{zz}(\omega_\text{SFG})L_{yy}(\omega_\text{vis})L_{yy}(\omega_\text{IR})
+    \sin\theta_\text{SFG} \chi_{zyy}, \\
+    \chi_\text{eff, ppp}^{(2)} &
+  =-L_{xx}(\omega_\text{SFG})L_{xx}(\omega_\text{vis})L_{zz}(\omega_\text{IR})
+    \cos\theta_\text{SFG}\cos\theta_\text{vis}
+    \sin\theta_\text{IR} \chi_{xxz} \\
+    & \quad-L_{xx}(\omega_\text{SFG})
+            L_{zz}(\omega_\text{vis})
+            L_{xx}(\omega_\text{IR})
+      \cos\theta_\text{SFG}\sin\theta_\text{vis}
+      \cos\theta_\text{IR} \chi_{xzx} \\
+    & \quad+L_{zz}(\omega_\text{SFG})
+            L_{xx}(\omega_\text{vis})
+            L_{xx}(\omega_\text{IR})
+      \sin\theta_\text{SFG}\cos\theta_\text{vis}
+      \cos\theta_\text{IR} \chi_{zxx} \\
+    & \quad+L_{zz}(\omega_\text{SFG})
+            L_{zz}(\omega_\text{vis})
+            L_{zz}(\omega_\text{IR})
+      \sin\theta_\text{SFG}\sin\theta_\text{vis}
+      \sin\theta_\text{IR} \chi_{zzz}.
+  \end{aligned}
+\end{equation}
+The Fresnel relations in \zcref{eq:fresnel} are needed to correct for the
+experimental geometry when extracting intrinsic molecular information.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width = \linewidth]{HW5-1.pdf}
+  \caption{Conventional ssp-polarized VSFG spectra of neat water and aqueous
+    salt solutions in the \ce{O-H} stretching region, illustrating the
+    sensitivity of the technique to interfacial water hydrogen bonding
+    (adapted from~\cite[Figure~1]{jubb2012environmental}).}
+  \label{fig:water_spectra}
+\end{figure}
+\zcref[S]{fig:water_spectra} shows representative spectra.
+
+\subsection{Molecular Origin of the Nonlinear Spectroscopic Signal}
+
+The signal arises from the second-order nonlinear polarization induced at the
+interface
+\begin{equation}\label{eq:P2}
+  \mathbf P^{(2)}(\omega_\text{SFG})
+= \chi^{(2)} : \mathbf E(\omega_\text{vis})\mathbf E(\omega_\text{IR}).
+\end{equation}
+The effective second-order susceptibility contains both resonant and
+non-resonant contributions
+\begin{equation}\label{eq:chi_sum}
+  \chi_{\text{eff}}^{(2)}
+= \chi_{\text{NR}}^{(2)} + \sum_{\nu} \chi_{\nu}^{(2)}.
+\end{equation}
+As shown in~\zcref{eq:I_SFG}, the measured VSFG intensity is proportional to
+the square modulus of this effective susceptibility~\cite{jubb2012environmental}
+\begin{equation}\label{eq:I_SFG}
+  I_\text{SFG} \propto |\chi_\text{eff}^{(2)}|^2 I_\text{vis} I_\text{IR}.
+\end{equation}
+The signal is dominated by the molecular hyperpolarizability $\beta$,
+which reflects the transition moments of the vibrational modes (Raman and IR
+active) at the surface, providing structural orientation
+information~\cite{jubb2012environmental}.
+
+\subsection{Signal Analysis and Molecular Information}
+
+The resonant contribution of each vibrational mode is described by a
+Lorentzian lineshape:
+\begin{equation}\label{eq:lorentzian}
+  \chi_{\text{eff}, \nu}^{(2)} \propto
+  \frac{A_\nu}{\omega_{\text{IR}} - \omega_\nu + i\Gamma_\nu}.
+\end{equation}
+where $A_\nu$ is the transition strength, $\omega_\nu$ the vibrational
+frequency, and $\Gamma_\nu$ the linewidth.
+
+In conventional VSFG, however, the measured intensity
+$|\chi_{\text{eff}}^{(2)}|^2$ loses the sign (phase) of the vibrational
+transition. To recover the absolute molecular orientation, phase‑sensitive SFG
+(PS‑SFG) measures the imaginary part of the resonant susceptibility
+directly~\cite[Eq.~9]{jubb2012environmental}
+\begin{equation}\label{eq:imag_chi}
+  \Im \chi_\nu^{(2)} = -\sum_\nu
+  \frac{A_\nu \Gamma_\nu}{(\omega_{\text{IR}} - \omega_\nu)^2 + \Gamma_\nu^2}.
+\end{equation}
+This approach in~\zcref{eq:imag_chi} allows unambiguous determination of the
+up/down orientation of surface species.
+
+By analyzing the peak positions (e.g., dangling \ce{O-H} vs.
+hydrogen-bonded \ce{O-H}) and their relative intensities, we can quantify the
+degree of surface water ordering, identify specific pollutants, and assess the
+degradation state of protective coatings on the architectural
+glass~\cite{jubb2012environmental}.
+
+\subsection*{Reference}
+
+% \begin{refsection}[reference-hw5]
+  \renewcommand \addcontentsline [3] {}
+  \renewcommand \chapter [2] {}
+  \printbibliography
+% \end{refsection}
+
+\endgroup
